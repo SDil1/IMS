@@ -10,23 +10,21 @@ using System.Windows.Forms;
 
 namespace InventoryMnagement
 {
-    public partial class LoginForm : Form
+    public partial class ManageUser : Form
     {
-        public LoginForm()
+        public ManageUser()
         {
             InitializeComponent();
         }
 
-        private void pswdshow_Click(object sender, EventArgs e)
+        private void ManageUser_Load(object sender, EventArgs e)
         {
-                pwdbox.UseSystemPasswordChar = false;
-                pswdshow.BringToFront();
+
         }
 
-        private void clearButton_Click(object sender, EventArgs e)
+        private void closeButton_Click(object sender, EventArgs e)
         {
-            Username.Clear();
-            pwdbox.Clear();
+            Application.Exit();
         }
     }
 }

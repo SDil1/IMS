@@ -11,7 +11,9 @@ namespace InventoryMnagement
     {
         static void Main(string[] args)
         {
-            Application.Run(new LoginForm());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ManageUser());
         }
     }
 }
