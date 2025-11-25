@@ -73,8 +73,27 @@ namespace InventoryMnagement
 
         private void edit_Click(object sender, EventArgs e)
         {
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(
+                    "UPDATE UserTbl SET UfullName = '" + Ufullname.Text +
+                    "', Uname = '" + Uname.Text +
+                    "', UPassword = '" + Upassword.Text +
+                     "' WHERE UPhone = '" + Uphone.Text + "'",
+                     con);
 
-            
+
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("User Updated Successfully");
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            populate();
+
         }
 
         private void ManageUser_Load(object sender, EventArgs e)
