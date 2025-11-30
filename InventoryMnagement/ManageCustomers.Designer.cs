@@ -40,14 +40,14 @@
             this.add = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
-            this.Users = new System.Windows.Forms.DataGridView();
+            this.customer = new System.Windows.Forms.DataGridView();
             this.custname = new System.Windows.Forms.TextBox();
             this.custphone = new System.Windows.Forms.TextBox();
             this.custId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Users)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -159,6 +159,7 @@
             this.delete.TabIndex = 19;
             this.delete.Text = "DELETE";
             this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
             // 
             // edit
             // 
@@ -168,17 +169,19 @@
             this.edit.TabIndex = 18;
             this.edit.Text = "EDIT";
             this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
-            // Users
+            // customer
             // 
-            this.Users.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Users.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.Users.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Users.Location = new System.Drawing.Point(336, 106);
-            this.Users.Name = "Users";
-            this.Users.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.Users.Size = new System.Drawing.Size(1104, 515);
-            this.Users.TabIndex = 21;
+            this.customer.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.customer.GridColor = System.Drawing.SystemColors.ActiveBorder;
+            this.customer.Location = new System.Drawing.Point(336, 106);
+            this.customer.Name = "customer";
+            this.customer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.customer.Size = new System.Drawing.Size(1104, 515);
+            this.customer.TabIndex = 21;
+            this.customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customer_CellContentClick);
             // 
             // custname
             // 
@@ -220,7 +223,7 @@
             this.Controls.Add(this.custId);
             this.Controls.Add(this.custphone);
             this.Controls.Add(this.custname);
-            this.Controls.Add(this.Users);
+            this.Controls.Add(this.customer);
             this.Controls.Add(this.add);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.edit);
@@ -231,10 +234,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ManageCustomers";
             this.Text = "ManageCustomers";
+            this.Load += new System.EventHandler(this.ManageCustomer_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.Users)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.customer)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,7 +257,7 @@
         private System.Windows.Forms.Button add;
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button edit;
-        private System.Windows.Forms.DataGridView Users;
+        private System.Windows.Forms.DataGridView customer;
         private System.Windows.Forms.TextBox custname;
         private System.Windows.Forms.TextBox custphone;
         private System.Windows.Forms.Button button1;
