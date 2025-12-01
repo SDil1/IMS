@@ -16,7 +16,8 @@ namespace InventoryMnagement
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
            
-            Application.Run(new ManageCustomers());
+            
+            Application.Run(new ManageCatagorises());
         }
     }
 }

@@ -141,5 +141,7 @@ namespace InventoryMnagement
                 Uphone.Text = row.Cells["UPhone"].Value.ToString();
             }
         }
+
+        
     }
 }

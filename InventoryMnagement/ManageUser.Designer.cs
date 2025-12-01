@@ -238,7 +238,7 @@
             this.Users.Size = new System.Drawing.Size(1104, 502);
             this.Users.TabIndex = 17;
             this.Users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Users_CellClick);
-           
+            
             // 
             // inventorydbDataSetBindingSource1
             // 
