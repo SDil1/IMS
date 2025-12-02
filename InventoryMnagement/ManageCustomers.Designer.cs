@@ -179,7 +179,7 @@
             this.customer.Location = new System.Drawing.Point(336, 106);
             this.customer.Name = "customer";
             this.customer.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.customer.Size = new System.Drawing.Size(1104, 515);
+            this.customer.Size = new System.Drawing.Size(891, 515);
             this.customer.TabIndex = 21;
             this.customer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.customer_CellContentClick);
             // 

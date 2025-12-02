@@ -38,6 +38,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Users = new System.Windows.Forms.DataGridView();
+            this.CatName = new System.Windows.Forms.TextBox();
+            this.CatId = new System.Windows.Forms.TextBox();
+            this.CategoriesId = new System.Windows.Forms.Label();
+            this.CategoriesName = new System.Windows.Forms.Label();
+            this.add = new System.Windows.Forms.Button();
+            this.delete = new System.Windows.Forms.Button();
+            this.edit = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Users)).BeginInit();
@@ -143,12 +150,84 @@
             this.Users.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.Users.Size = new System.Drawing.Size(1104, 502);
             this.Users.TabIndex = 23;
+            this.Users.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Users_CellContentClick);
+            // 
+            // CatName
+            // 
+            this.CatName.Location = new System.Drawing.Point(218, 206);
+            this.CatName.Name = "CatName";
+            this.CatName.Size = new System.Drawing.Size(164, 20);
+            this.CatName.TabIndex = 25;
+            // 
+            // CatId
+            // 
+            this.CatId.Location = new System.Drawing.Point(218, 166);
+            this.CatId.Name = "CatId";
+            this.CatId.Size = new System.Drawing.Size(164, 20);
+            this.CatId.TabIndex = 24;
+            // 
+            // CategoriesId
+            // 
+            this.CategoriesId.AutoSize = true;
+            this.CategoriesId.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoriesId.Location = new System.Drawing.Point(12, 160);
+            this.CategoriesId.Name = "CategoriesId";
+            this.CategoriesId.Size = new System.Drawing.Size(152, 25);
+            this.CategoriesId.TabIndex = 27;
+            this.CategoriesId.Text = "Categories Id";
+            // 
+            // CategoriesName
+            // 
+            this.CategoriesName.AutoSize = true;
+            this.CategoriesName.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CategoriesName.Location = new System.Drawing.Point(15, 199);
+            this.CategoriesName.Name = "CategoriesName";
+            this.CategoriesName.Size = new System.Drawing.Size(193, 25);
+            this.CategoriesName.TabIndex = 26;
+            this.CategoriesName.Text = "Categories Name";
+            // 
+            // add
+            // 
+            this.add.Location = new System.Drawing.Point(63, 287);
+            this.add.Name = "add";
+            this.add.Size = new System.Drawing.Size(75, 23);
+            this.add.TabIndex = 30;
+            this.add.Text = "ADD";
+            this.add.UseVisualStyleBackColor = true;
+            this.add.Click += new System.EventHandler(this.add_Click);
+            // 
+            // delete
+            // 
+            this.delete.Location = new System.Drawing.Point(148, 287);
+            this.delete.Name = "delete";
+            this.delete.Size = new System.Drawing.Size(75, 23);
+            this.delete.TabIndex = 29;
+            this.delete.Text = "DELETE";
+            this.delete.UseVisualStyleBackColor = true;
+            this.delete.Click += new System.EventHandler(this.delete_Click);
+            // 
+            // edit
+            // 
+            this.edit.Location = new System.Drawing.Point(248, 287);
+            this.edit.Name = "edit";
+            this.edit.Size = new System.Drawing.Size(75, 23);
+            this.edit.TabIndex = 28;
+            this.edit.Text = "EDIT";
+            this.edit.UseVisualStyleBackColor = true;
+            this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
             // ManageCatagorises
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1534, 743);
+            this.Controls.Add(this.add);
+            this.Controls.Add(this.delete);
+            this.Controls.Add(this.edit);
+            this.Controls.Add(this.CategoriesId);
+            this.Controls.Add(this.CategoriesName);
+            this.Controls.Add(this.CatName);
+            this.Controls.Add(this.CatId);
             this.Controls.Add(this.Users);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.closeButton);
@@ -159,6 +238,7 @@
             this.Name = "ManageCatagorises";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManagaeCatagorise";
+            this.Load += new System.EventHandler(this.ManageCatagorises_Load);
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -180,5 +260,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView Users;
+        private System.Windows.Forms.TextBox CatName;
+        private System.Windows.Forms.TextBox CatId;
+        private System.Windows.Forms.Label CategoriesId;
+        private System.Windows.Forms.Label CategoriesName;
+        private System.Windows.Forms.Button add;
+        private System.Windows.Forms.Button delete;
+        private System.Windows.Forms.Button edit;
     }
 }
