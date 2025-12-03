@@ -212,7 +212,7 @@
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel2.Controls.Add(this.home);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 646);
+            this.panel2.Location = new System.Drawing.Point(0, 641);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1535, 45);
             this.panel2.TabIndex = 16;
@@ -238,7 +238,6 @@
             this.Users.Size = new System.Drawing.Size(1104, 502);
             this.Users.TabIndex = 17;
             this.Users.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Users_CellClick);
-            
             // 
             // inventorydbDataSetBindingSource1
             // 
@@ -249,7 +248,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1535, 691);
+            this.ClientSize = new System.Drawing.Size(1535, 686);
             this.Controls.Add(this.Users);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.add);
