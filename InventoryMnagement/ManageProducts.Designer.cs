@@ -31,6 +31,7 @@
             System.Windows.Forms.Label label1;
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.closeButton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -51,7 +52,8 @@
             this.add = new System.Windows.Forms.Button();
             this.delete = new System.Windows.Forms.Button();
             this.edit = new System.Windows.Forms.Button();
-            this.closeButton = new System.Windows.Forms.Button();
+            this.searchCombo = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -80,6 +82,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1470, 100);
             this.panel1.TabIndex = 24;
+            // 
+            // closeButton
+            // 
+            this.closeButton.Location = new System.Drawing.Point(1435, 3);
+            this.closeButton.Name = "closeButton";
+            this.closeButton.Size = new System.Drawing.Size(28, 23);
+            this.closeButton.TabIndex = 18;
+            this.closeButton.Text = "X";
+            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
             // 
             // button1
             // 
@@ -134,10 +146,10 @@
             this.Products.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.Products.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Products.GridColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Products.Location = new System.Drawing.Point(359, 115);
+            this.Products.Location = new System.Drawing.Point(359, 149);
             this.Products.Name = "Products";
             this.Products.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.Products.Size = new System.Drawing.Size(1104, 556);
+            this.Products.Size = new System.Drawing.Size(1104, 522);
             this.Products.TabIndex = 25;
             this.Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Users_CellContentClick);
             // 
@@ -264,21 +276,30 @@
             this.edit.UseVisualStyleBackColor = true;
             this.edit.Click += new System.EventHandler(this.edit_Click);
             // 
-            // closeButton
+            // searchCombo
             // 
-            this.closeButton.Location = new System.Drawing.Point(1435, 3);
-            this.closeButton.Name = "closeButton";
-            this.closeButton.Size = new System.Drawing.Size(28, 23);
-            this.closeButton.TabIndex = 18;
-            this.closeButton.Text = "X";
-            this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.searchCombo.FormattingEnabled = true;
+            this.searchCombo.Location = new System.Drawing.Point(1140, 106);
+            this.searchCombo.Name = "searchCombo";
+            this.searchCombo.Size = new System.Drawing.Size(168, 21);
+            this.searchCombo.TabIndex = 41;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(1314, 106);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "Search";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // ManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 752);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.searchCombo);
             this.Controls.Add(this.add);
             this.Controls.Add(this.delete);
             this.Controls.Add(this.edit);
@@ -336,5 +357,7 @@
         private System.Windows.Forms.Button delete;
         private System.Windows.Forms.Button edit;
         private System.Windows.Forms.Button closeButton;
+        private System.Windows.Forms.ComboBox searchCombo;
+        private System.Windows.Forms.Button button2;
     }
 }
