@@ -41,6 +41,27 @@ namespace InventoryMnagement
 
         }
 
+        void filterbyCategory()
+        {
+            try
+            {
+                con.Open();
+
+                string query = "select * from ProductTbl where ProCategory = '" + searchCombo.SelectedValue.ToString() + "'";
+                SqlDataAdapter da = new SqlDataAdapter(query, con);
+                SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                var ds = new DataSet();
+                da.Fill(ds);
+                Products.DataSource = ds.Tables[0];
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+        }
+
         void fillCategory()
         {
             try
@@ -55,6 +76,8 @@ namespace InventoryMnagement
                 dt.Load(rdr);
                 categories.ValueMember = "CatName";
                 categories.DataSource = dt;
+                searchCombo.ValueMember = "CatName";
+                searchCombo.DataSource = dt;
                 con.Close();
             }
             catch (Exception ex)
@@ -63,13 +86,16 @@ namespace InventoryMnagement
             }
         }
 
+       
         private void closeButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
         private void ManageProducts_Load(object sender, EventArgs e)
         {
+            
             fillCategory();
+            
             populate();
         }
 
@@ -175,6 +201,18 @@ namespace InventoryMnagement
                     MessageBox.Show("Error: " + ex.Message);
                 }
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+             
+            filterbyCategory();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            populate();
         }
     }
 }

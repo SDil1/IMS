@@ -54,6 +54,7 @@
             this.edit = new System.Windows.Forms.Button();
             this.searchCombo = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -279,25 +280,37 @@
             // searchCombo
             // 
             this.searchCombo.FormattingEnabled = true;
-            this.searchCombo.Location = new System.Drawing.Point(1140, 106);
+            this.searchCombo.Location = new System.Drawing.Point(1119, 106);
             this.searchCombo.Name = "searchCombo";
             this.searchCombo.Size = new System.Drawing.Size(168, 21);
             this.searchCombo.TabIndex = 41;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(1314, 106);
+            this.button2.Location = new System.Drawing.Point(1293, 106);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 42;
             this.button2.Text = "Search";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(1374, 106);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Refresh";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // ManageProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1470, 752);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.searchCombo);
             this.Controls.Add(this.add);
@@ -359,5 +372,6 @@
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.ComboBox searchCombo;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
