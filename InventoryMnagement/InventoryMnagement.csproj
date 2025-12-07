@@ -63,6 +63,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ManageOrders.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManageOrders.Designer.cs">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </Compile>
     <Compile Include="ManageProducts.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ManageOrders.resx">
+      <DependentUpon>ManageOrders.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ManageProducts.resx">
       <DependentUpon>ManageProducts.cs</DependentUpon>
     </EmbeddedResource>
