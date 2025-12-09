@@ -117,14 +117,59 @@ namespace InventoryMnagement
             fillCategory();
         }
 
+        int n = 0;
+        int uprice, totprice, qty;
+        string product;
+
         private void button5_Click(object sender, EventArgs e)
         {
             filterbyCategory();
         }
 
-        private void searchCombo_SelectedIndexChanged(object sender, EventArgs e)
+      
+
+        
+
+        int flag = 0;
+      
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void Products_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = Products.Rows[e.RowIndex];
+
+                product = row.Cells["ProName"].Value.ToString();
+
+                // qty = Convert.ToInt32(QtyTb.Text);
+                uprice = Convert.ToInt32(row.Cells["ProPrice"].Value.ToString());
+
+                //totprice = qty * uprice;
+                flag = 1;
+
+            }
+        }
+
+        private void button6_Click_1(object sender, EventArgs e)
+        {
+            if (QtyTb.Text == "")
+            {
+                MessageBox.Show("Select The Product And Enter The Quantity");
+            }
+            else if (flag == 0)
+            {
+                MessageBox.Show("Select The Product");
+            }
+            else
+            {
+
+            }
         }
 
         private void labe9_Click(object sender, EventArgs e)

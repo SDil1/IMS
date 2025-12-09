@@ -46,7 +46,7 @@
             this.home = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.labe9 = new System.Windows.Forms.Label();
-            this.productId = new System.Windows.Forms.TextBox();
+            this.orderId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.customerId = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -54,9 +54,14 @@
             this.custName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.qty = new System.Windows.Forms.TextBox();
+            this.QtyTb = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customers)).BeginInit();
@@ -201,6 +206,7 @@
             this.Products.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.Products.Size = new System.Drawing.Size(666, 300);
             this.Products.TabIndex = 27;
+            this.Products.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Products_CellContentClick_1);
             // 
             // searchCombo
             // 
@@ -209,7 +215,6 @@
             this.searchCombo.Name = "searchCombo";
             this.searchCombo.Size = new System.Drawing.Size(168, 21);
             this.searchCombo.TabIndex = 42;
-            this.searchCombo.SelectedIndexChanged += new System.EventHandler(this.searchCombo_SelectedIndexChanged);
             // 
             // button5
             // 
@@ -251,12 +256,12 @@
             this.labe9.Text = "ProductId";
             this.labe9.Click += new System.EventHandler(this.labe9_Click);
             // 
-            // productId
+            // orderId
             // 
-            this.productId.Location = new System.Drawing.Point(170, 534);
-            this.productId.Name = "productId";
-            this.productId.Size = new System.Drawing.Size(164, 20);
-            this.productId.TabIndex = 45;
+            this.orderId.Location = new System.Drawing.Point(170, 534);
+            this.orderId.Name = "orderId";
+            this.orderId.Size = new System.Drawing.Size(164, 20);
+            this.orderId.TabIndex = 45;
             // 
             // label5
             // 
@@ -319,12 +324,12 @@
             this.label8.TabIndex = 54;
             this.label8.Text = "Quntity";
             // 
-            // qty
+            // QtyTb
             // 
-            this.qty.Location = new System.Drawing.Point(904, 455);
-            this.qty.Name = "qty";
-            this.qty.Size = new System.Drawing.Size(164, 20);
-            this.qty.TabIndex = 55;
+            this.QtyTb.Location = new System.Drawing.Point(904, 455);
+            this.QtyTb.Name = "QtyTb";
+            this.QtyTb.Size = new System.Drawing.Size(164, 20);
+            this.QtyTb.TabIndex = 55;
             // 
             // button6
             // 
@@ -334,17 +339,49 @@
             this.button6.TabIndex = 20;
             this.button6.Text = "Add to Order";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click_1);
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Num,
+            this.Product,
+            this.Quantity,
+            this.UPrice,
+            this.TotPrice});
             this.dataGridView1.GridColor = System.Drawing.SystemColors.ActiveBorder;
             this.dataGridView1.Location = new System.Drawing.Point(664, 482);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.dataGridView1.Size = new System.Drawing.Size(666, 300);
             this.dataGridView1.TabIndex = 56;
+            // 
+            // Num
+            // 
+            this.Num.HeaderText = "Num";
+            this.Num.Name = "Num";
+            // 
+            // Product
+            // 
+            this.Product.HeaderText = "Product";
+            this.Product.Name = "Product";
+            // 
+            // Quantity
+            // 
+            this.Quantity.HeaderText = "Quantity";
+            this.Quantity.Name = "Quantity";
+            // 
+            // UPrice
+            // 
+            this.UPrice.HeaderText = "UPrice";
+            this.UPrice.Name = "UPrice";
+            // 
+            // TotPrice
+            // 
+            this.TotPrice.HeaderText = "TotalPrice";
+            this.TotPrice.Name = "TotPrice";
             // 
             // ManageOrders
             // 
@@ -353,7 +390,7 @@
             this.ClientSize = new System.Drawing.Size(1435, 836);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.qty);
+            this.Controls.Add(this.QtyTb);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.custName);
@@ -362,7 +399,7 @@
             this.Controls.Add(this.customerId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labe9);
-            this.Controls.Add(this.productId);
+            this.Controls.Add(this.orderId);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.searchCombo);
@@ -407,7 +444,7 @@
         private System.Windows.Forms.Button home;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label labe9;
-        private System.Windows.Forms.TextBox productId;
+        private System.Windows.Forms.TextBox orderId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox customerId;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -415,8 +452,13 @@
         private System.Windows.Forms.TextBox custName;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox qty;
+        private System.Windows.Forms.TextBox QtyTb;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotPrice;
     }
 }

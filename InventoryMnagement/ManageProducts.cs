@@ -164,17 +164,19 @@ namespace InventoryMnagement
 
         private void Users_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = Products.Rows[e.RowIndex];
+            
+              if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = Products.Rows[e.RowIndex];
 
-                productId.Text = row.Cells["ProId"].Value.ToString();
-                productName.Text = row.Cells["ProName"].Value.ToString();
-                productQty.Text = row.Cells["ProQty"].Value.ToString();
-                productPrice.Text = row.Cells["ProPrice"].Value.ToString();
-                productDescription.Text = row.Cells["ProDescription"].Value.ToString();
-                categories.SelectedValue = row.Cells["ProCategory"].Value.ToString(); 
-            }
+                    productId.Text = row.Cells["ProId"].Value.ToString();
+                    productName.Text = row.Cells["ProName"].Value.ToString();
+                    productQty.Text = row.Cells["ProQty"].Value.ToString();
+                    productPrice.Text = row.Cells["ProPrice"].Value.ToString();
+                    productDescription.Text = row.Cells["ProDescription"].Value.ToString();
+                    categories.SelectedValue = row.Cells["ProCategory"].Value.ToString();
+               }
+            
 
         }
 
