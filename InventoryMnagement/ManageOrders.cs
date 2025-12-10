@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace InventoryMnagement
 {
@@ -66,6 +68,25 @@ namespace InventoryMnagement
             }
         }
 
+        void updateproduct()
+        {
+            try
+            {
+                con.Open();
+                int id=Convert.ToInt32(Products.CurrentRow.Cells[0].Value.ToString());
+                int newqty = stock - Convert.ToInt32(QtyTb.Text);
+                string query = "update ProductTbl set ProQty=" + newqty + " where ProId=" + id + "";
+                SqlCommand cmd = new SqlCommand(query, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                populateProducts();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         void fillCategory()
         {
             try
@@ -117,6 +138,7 @@ namespace InventoryMnagement
             fillCategory();
         }
 
+        int num = 0;
         int n = 0;
         int uprice, totprice, qty;
         string product;
@@ -131,13 +153,9 @@ namespace InventoryMnagement
         
 
         int flag = 0;
-      
+        int stock;
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-           
-        }
-
+       
         private void Products_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -146,7 +164,7 @@ namespace InventoryMnagement
                 DataGridViewRow row = Products.Rows[e.RowIndex];
 
                 product = row.Cells["ProName"].Value.ToString();
-
+                stock = Convert.ToInt32(row.Cells["ProQty"].Value.ToString());
                 // qty = Convert.ToInt32(QtyTb.Text);
                 uprice = Convert.ToInt32(row.Cells["ProPrice"].Value.ToString());
 
@@ -158,6 +176,7 @@ namespace InventoryMnagement
 
         private void button6_Click_1(object sender, EventArgs e)
         {
+            int sum = 0;
             if (QtyTb.Text == "")
             {
                 MessageBox.Show("Select The Product And Enter The Quantity");
@@ -165,11 +184,26 @@ namespace InventoryMnagement
             else if (flag == 0)
             {
                 MessageBox.Show("Select The Product");
+
+            }
+            else if (Convert.ToInt32(QtyTb.Text) > stock)
+            {
+                MessageBox.Show("Not Enough In Stock");
             }
             else
             {
+                num = num + 1;
+                qty = Convert.ToInt32(QtyTb.Text);
+                totprice = qty * uprice;
+
+                dataGridView1.Rows.Add(num,product,qty,uprice,totprice);
+                flag = 0;
+
+                updateproduct();
 
             }
+            sum=sum + totprice;
+            TotAmount.Text = "Rs"+sum.ToString();
         }
 
         private void labe9_Click(object sender, EventArgs e)

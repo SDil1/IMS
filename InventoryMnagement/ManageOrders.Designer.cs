@@ -62,6 +62,11 @@
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotAmount = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customers)).BeginInit();
@@ -240,7 +245,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel3.Controls.Add(this.home);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 787);
+            this.panel3.Location = new System.Drawing.Point(0, 814);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1435, 49);
             this.panel3.TabIndex = 44;
@@ -383,11 +388,64 @@
             this.TotPrice.HeaderText = "TotalPrice";
             this.TotPrice.Name = "TotPrice";
             // 
+            // TotAmount
+            // 
+            this.TotAmount.AutoSize = true;
+            this.TotAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotAmount.Location = new System.Drawing.Point(954, 785);
+            this.TotAmount.Name = "TotAmount";
+            this.TotAmount.Size = new System.Drawing.Size(47, 25);
+            this.TotAmount.TabIndex = 57;
+            this.TotAmount.Text = "Rs.";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(797, 785);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(151, 25);
+            this.label10.TabIndex = 58;
+            this.label10.Text = "Total Amount";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(209, 102);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(157, 25);
+            this.label11.TabIndex = 59;
+            this.label11.Text = "Customer List";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(214, 719);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(194, 23);
+            this.button7.TabIndex = 60;
+            this.button7.Text = "View Orders";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(12, 719);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(194, 23);
+            this.button8.TabIndex = 61;
+            this.button8.Text = "Insert Order";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
             // ManageOrders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1435, 836);
+            this.ClientSize = new System.Drawing.Size(1435, 863);
+            this.Controls.Add(this.button8);
+            this.Controls.Add(this.button7);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.TotAmount);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.QtyTb);
@@ -460,5 +518,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
         private System.Windows.Forms.DataGridViewTextBoxColumn UPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotPrice;
+        private System.Windows.Forms.Label TotAmount;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
     }
 }
