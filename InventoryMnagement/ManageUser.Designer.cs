@@ -206,6 +206,7 @@
             this.home.TabIndex = 14;
             this.home.Text = "HOME";
             this.home.UseVisualStyleBackColor = true;
+            this.home.Click += new System.EventHandler(this.home_Click);
             // 
             // panel2
             // 

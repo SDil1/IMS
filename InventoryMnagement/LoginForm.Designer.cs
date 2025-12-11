@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.clearButton = new System.Windows.Forms.Button();
+            this.pswdshow = new System.Windows.Forms.Button();
             this.Username = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,8 +39,7 @@
             this.Login = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pswdshow = new System.Windows.Forms.Button();
-            this.clearButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +58,27 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(322, 276);
             this.panel1.TabIndex = 0;
+            // 
+            // clearButton
+            // 
+            this.clearButton.Location = new System.Drawing.Point(136, 186);
+            this.clearButton.Name = "clearButton";
+            this.clearButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.clearButton.Size = new System.Drawing.Size(75, 23);
+            this.clearButton.TabIndex = 8;
+            this.clearButton.Text = "Clear";
+            this.clearButton.UseVisualStyleBackColor = true;
+            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            // 
+            // pswdshow
+            // 
+            this.pswdshow.Location = new System.Drawing.Point(217, 186);
+            this.pswdshow.Name = "pswdshow";
+            this.pswdshow.Size = new System.Drawing.Size(82, 23);
+            this.pswdshow.TabIndex = 7;
+            this.pswdshow.Text = "show";
+            this.pswdshow.UseVisualStyleBackColor = true;
+            this.pswdshow.Click += new System.EventHandler(this.pswdshow_Click);
             // 
             // Username
             // 
@@ -102,6 +124,7 @@
             this.Login.TabIndex = 1;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
+            this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
             // label1
             // 
@@ -125,26 +148,15 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "INVENTORY MANAGEMENT SYSTEM";
             // 
-            // pswdshow
+            // button1
             // 
-            this.pswdshow.Location = new System.Drawing.Point(217, 186);
-            this.pswdshow.Name = "pswdshow";
-            this.pswdshow.Size = new System.Drawing.Size(82, 23);
-            this.pswdshow.TabIndex = 7;
-            this.pswdshow.Text = "show";
-            this.pswdshow.UseVisualStyleBackColor = true;
-            this.pswdshow.Click += new System.EventHandler(this.pswdshow_Click);
-            // 
-            // clearButton
-            // 
-            this.clearButton.Location = new System.Drawing.Point(136, 186);
-            this.clearButton.Name = "clearButton";
-            this.clearButton.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.clearButton.Size = new System.Drawing.Size(75, 23);
-            this.clearButton.TabIndex = 8;
-            this.clearButton.Text = "Clear";
-            this.clearButton.UseVisualStyleBackColor = true;
-            this.clearButton.Click += new System.EventHandler(this.clearButton_Click);
+            this.button1.Location = new System.Drawing.Point(616, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(28, 23);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "X";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // LoginForm
             // 
@@ -153,6 +165,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(656, 493);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -178,5 +191,6 @@
         private System.Windows.Forms.TextBox Username;
         private System.Windows.Forms.Button pswdshow;
         private System.Windows.Forms.Button clearButton;
+        private System.Windows.Forms.Button button1;
     }
 }

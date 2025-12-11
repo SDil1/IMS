@@ -72,19 +72,30 @@ namespace InventoryMnagement
         {
             try
             {
-                con.Open();
+               
                 int id=Convert.ToInt32(Products.CurrentRow.Cells[0].Value.ToString());
                 int newqty = stock - Convert.ToInt32(QtyTb.Text);
-                string query = "update ProductTbl set ProQty=" + newqty + " where ProId=" + id + "";
-                SqlCommand cmd = new SqlCommand(query, con);
-                cmd.ExecuteNonQuery();
-                con.Close();
-                populateProducts();
+                if(newqty < 0)
+                {
+                    MessageBox.Show("Insufficient stock available.");
+                    con.Close();
+                    return;
+                }
+                else {
+                    con.Open();
+                    string query = "update ProductTbl set ProQty=" + newqty + " where ProId=" + id + "";
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    con.Close();
+                    populateProducts();
+                }
+               
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+
         }
 
         void fillCategory()
@@ -204,6 +215,55 @@ namespace InventoryMnagement
             }
             sum=sum + totprice;
             TotAmount.Text = "Rs"+sum.ToString();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if(orderId.Text == "" || customerId.Text == "" || TotAmount.Text == "")
+            {
+                MessageBox.Show("Missing Information");
+            }
+            else
+            {
+                
+                try
+                {
+                    con.Open();
+                    string query = "INSERT INTO OrderTbl (OrderId, CustId, CustName, OrderDate, TotalAmount) VALUES (" +
+                 orderId.Text.Trim() + ", " +
+                 customerId.Text.Trim() + ", '" +
+                 custName.Text.Replace("'", "''").Trim() + "', '" +
+                 orderDate.Value.ToString("yyyy-MM-dd") + "', " +
+                 TotAmount.Text.Replace("Rs", "").Trim() +
+                 ")";
+
+
+
+                    SqlCommand cmd = new SqlCommand(query, con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Order Added Successfully");
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ViewOrders viewOrders = new ViewOrders();
+            viewOrders.Show();
+        }
+
+        private void home_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
         }
 
         private void labe9_Click(object sender, EventArgs e)

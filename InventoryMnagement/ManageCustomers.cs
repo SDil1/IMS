@@ -111,7 +111,28 @@ namespace InventoryMnagement
                custId.Text = row.Cells["custId"].Value.ToString();
                custname.Text = row.Cells["custName"].Value.ToString();
                custphone.Text = row.Cells["custPhone"].Value.ToString();
-               
+               con.Open();
+
+                SqlDataAdapter sda=new SqlDataAdapter("select count(*) from OrderTbl where custId='" + custId.Text + "'", con);
+                DataTable dt = new DataTable();
+                sda.Fill(dt);
+                orderslb.Text = dt.Rows[0][0].ToString();
+
+                
+                SqlDataAdapter sda1 = new SqlDataAdapter("select Sum(TotalAmount) from OrderTbl where custId='" + custId.Text + "'", con);
+                DataTable dt1 = new DataTable();
+                sda1.Fill(dt1);
+                amountlb.Text = dt1.Rows[0][0].ToString();
+
+                SqlDataAdapter sda2 = new SqlDataAdapter("select Max(OrderDate) from OrderTbl where custId='" + custId.Text + "'", con);
+                DataTable dt2 = new DataTable();
+                sda2.Fill(dt2);
+                datelb.Text = dt2.Rows[0][0].ToString();
+
+
+                con.Close();
+
+
             }
             else
             {
@@ -141,6 +162,13 @@ namespace InventoryMnagement
                 MessageBox.Show("Error: " + ex.Message);
             }
             populate();
+        }
+
+        private void home_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
         }
     }
 }

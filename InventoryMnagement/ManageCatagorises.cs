@@ -131,5 +131,12 @@ namespace InventoryMnagement
             }
             populate();
         }
+
+        private void home_Click(object sender, EventArgs e)
+        {
+            HomeForm home = new HomeForm();
+            home.Show();
+            this.Hide();
+        }
     }
 }

@@ -49,7 +49,7 @@
             this.orderId = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.customerId = new System.Windows.Forms.TextBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.orderDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.custName = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -239,6 +239,7 @@
             this.home.TabIndex = 14;
             this.home.Text = "HOME";
             this.home.UseVisualStyleBackColor = true;
+            this.home.Click += new System.EventHandler(this.home_Click);
             // 
             // panel3
             // 
@@ -256,9 +257,9 @@
             this.labe9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labe9.Location = new System.Drawing.Point(12, 528);
             this.labe9.Name = "labe9";
-            this.labe9.Size = new System.Drawing.Size(112, 25);
+            this.labe9.Size = new System.Drawing.Size(90, 25);
             this.labe9.TabIndex = 46;
-            this.labe9.Text = "ProductId";
+            this.labe9.Text = "OrderId";
             this.labe9.Click += new System.EventHandler(this.labe9_Click);
             // 
             // orderId
@@ -280,17 +281,18 @@
             // 
             // customerId
             // 
+            this.customerId.Enabled = false;
             this.customerId.Location = new System.Drawing.Point(170, 592);
             this.customerId.Name = "customerId";
             this.customerId.Size = new System.Drawing.Size(164, 20);
             this.customerId.TabIndex = 48;
             // 
-            // dateTimePicker1
+            // orderDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(150, 671);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 49;
+            this.orderDate.Location = new System.Drawing.Point(150, 671);
+            this.orderDate.Name = "orderDate";
+            this.orderDate.Size = new System.Drawing.Size(200, 20);
+            this.orderDate.TabIndex = 49;
             // 
             // label6
             // 
@@ -426,6 +428,7 @@
             this.button7.TabIndex = 60;
             this.button7.Text = "View Orders";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
@@ -435,6 +438,7 @@
             this.button8.TabIndex = 61;
             this.button8.Text = "Insert Order";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // ManageOrders
             // 
@@ -453,7 +457,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.custName);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.orderDate);
             this.Controls.Add(this.customerId);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.labe9);
@@ -505,7 +509,7 @@
         private System.Windows.Forms.TextBox orderId;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox customerId;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker orderDate;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox custName;
         private System.Windows.Forms.Label label7;

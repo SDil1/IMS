@@ -46,14 +46,14 @@
             this.custId = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.orderslb = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.datelb = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.amountlb = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.customer)).BeginInit();
@@ -152,6 +152,7 @@
             this.home.TabIndex = 14;
             this.home.Text = "HOME";
             this.home.UseVisualStyleBackColor = true;
+            this.home.Click += new System.EventHandler(this.home_Click);
             // 
             // add
             // 
@@ -229,32 +230,22 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.MediumVioletRed;
-            this.panel3.Controls.Add(this.label5);
+            this.panel3.Controls.Add(this.orderslb);
             this.panel3.Controls.Add(this.label4);
             this.panel3.Location = new System.Drawing.Point(1260, 124);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(168, 84);
             this.panel3.TabIndex = 28;
             // 
-            // panel4
+            // orderslb
             // 
-            this.panel4.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel4.Controls.Add(this.label9);
-            this.panel4.Controls.Add(this.label7);
-            this.panel4.Location = new System.Drawing.Point(1260, 422);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(168, 84);
-            this.panel4.TabIndex = 29;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.LightGreen;
-            this.panel5.Controls.Add(this.label8);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(1260, 270);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(168, 84);
-            this.panel5.TabIndex = 29;
+            this.orderslb.AutoSize = true;
+            this.orderslb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orderslb.Location = new System.Drawing.Point(54, 36);
+            this.orderslb.Name = "orderslb";
+            this.orderslb.Size = new System.Drawing.Size(54, 20);
+            this.orderslb.TabIndex = 4;
+            this.orderslb.Text = "orders";
             // 
             // label4
             // 
@@ -266,25 +257,25 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Order count";
             // 
-            // label5
+            // panel4
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(54, 36);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 20);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "orders";
+            this.panel4.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.panel4.Controls.Add(this.datelb);
+            this.panel4.Controls.Add(this.label7);
+            this.panel4.Location = new System.Drawing.Point(1260, 422);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(180, 84);
+            this.panel4.TabIndex = 29;
             // 
-            // label6
+            // datelb
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 24);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Order amount";
+            this.datelb.AutoSize = true;
+            this.datelb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.datelb.Location = new System.Drawing.Point(3, 40);
+            this.datelb.Name = "datelb";
+            this.datelb.Size = new System.Drawing.Size(41, 20);
+            this.datelb.TabIndex = 5;
+            this.datelb.Text = "date";
             // 
             // label7
             // 
@@ -296,25 +287,35 @@
             this.label7.TabIndex = 4;
             this.label7.Text = "Last Order date";
             // 
-            // label8
+            // panel5
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(55, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(63, 20);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "amount";
+            this.panel5.BackColor = System.Drawing.Color.LightGreen;
+            this.panel5.Controls.Add(this.amountlb);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(1260, 270);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(168, 84);
+            this.panel5.TabIndex = 29;
             // 
-            // label9
+            // amountlb
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(67, 37);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 20);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "date";
+            this.amountlb.AutoSize = true;
+            this.amountlb.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.amountlb.Location = new System.Drawing.Point(55, 36);
+            this.amountlb.Name = "amountlb";
+            this.amountlb.Size = new System.Drawing.Size(63, 20);
+            this.amountlb.TabIndex = 5;
+            this.amountlb.Text = "amount";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(139, 24);
+            this.label6.TabIndex = 4;
+            this.label6.Text = "Order amount";
             // 
             // ManageCustomers
             // 
@@ -378,10 +379,10 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label orderslb;
+        private System.Windows.Forms.Label datelb;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label amountlb;
         private System.Windows.Forms.Label label6;
     }
 }

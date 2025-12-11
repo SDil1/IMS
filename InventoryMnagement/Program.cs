@@ -17,7 +17,7 @@ namespace InventoryMnagement
             Application.SetCompatibleTextRenderingDefault(false);
 
 
-            Application.Run(new ManageOrders());
+            Application.Run(new SplashForm());
             
         }
     }
