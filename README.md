@@ -1,3 +1,4 @@
+
 # Inventory Management System (C# WinForms)
 
 A simple desktop inventory & order management application built using  
@@ -21,17 +22,7 @@ A simple desktop inventory & order management application built using
 - **Database:** SQL Server LocalDB (inventorydb.mdf)
 - **IDE:** Visual Studio 2022
 
----
 
-## 📸 Screenshots
-
-### ➤ Home Screen
-![Home](Assets/home.png)
-
-### ➤ Manage Orders
-![Orders](Assets/orders.png)
-
----
 
 ## 📦 How to Run
 1. Clone the repository  
@@ -56,4 +47,5 @@ InventoryManagement/
 
 ## ✨ Author
 Developed by **Senuda Dil**  
-GitHub: *your link*
+GitHub: *https://github.com/SDil1/IMS.git*
+
